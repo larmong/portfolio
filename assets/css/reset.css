@@ -59,12 +59,12 @@ html { font-size: 62.5%; }
 /* Questa R */
 @font-face {
     font-family:'Questa_R';
-    src: url('../font/Quicksand-Regular.ttf');
+    src: url('../font/2-Questa_Regular.otf');
 }
 /* Aritaburi M */
 @font-face {
     font-family:'Aritaburi_M';
-    src: url('../font/Quicksand-Regular.ttf');
+    src: url('../font/Arita-buriM.otf');
 }
 /* 서울남산체 M, L */
 @font-face {
