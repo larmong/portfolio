@@ -8,9 +8,10 @@ $(function(){
 	});
 })
 
+// greet 왼쪽에서 나오는 애니메이션
 $(document).ready(function() {
     $(window).scroll( function(){
-        $('.desc').each( function(i){
+        $('.greet').each( function(i){
             
             var bottom_of_element = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
