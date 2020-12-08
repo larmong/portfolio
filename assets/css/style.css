@@ -5,7 +5,7 @@
 #intro { height: 100vh; background: radial-gradient(ellipse at bottom, #2c1745 0%, #17153f 100%); overflow: hidden; position: relative; }
 #greet { background: #16142f; position: relative; height: 100vh; }
 #skill { position: relative; height: 100vh; background: radial-gradient(ellipse at bottom, #4c3860 0%, #16142f 70%) }
-#about {}
+#about { position: relative; height: 100vh; }
 #project {}
 #contact {}
 
