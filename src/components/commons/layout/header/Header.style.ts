@@ -3,10 +3,12 @@ import { Common } from "../../../../commons/style/emotion";
 
 export const Wrapper = styled.header`
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 999;
   width: 100vw;
   height: 120px;
-  background: #ebeae6;
+  background: ${Common.color.bg};
 `;
 
 export const LogoWrapper = styled.h1`

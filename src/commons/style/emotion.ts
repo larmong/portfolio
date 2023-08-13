@@ -2,6 +2,7 @@ export const Common = {
   color: {
     white: "#ffffff",
     default: "#333333",
+    gray: "#8c8c89",
     point: "#fe721c",
     highlighter: "#ffbc8d",
     border: "#282b26",

@@ -16,6 +16,7 @@ import {
 } from "./Section01.style";
 import { JackInTheBox } from "react-awesome-reveal";
 import { ITypeLinkList } from "./Section01.types";
+import ProgressBar from "../../../commons/progress/Progress01.container";
 
 export default function Section01() {
   const linkList: ITypeLinkList[] = [
@@ -35,6 +36,7 @@ export default function Section01() {
 
   return (
     <Wrapper>
+      <ProgressBar />
       <ContentContainer>
         <ContentLeft>이미지</ContentLeft>
         <ContentRight>
