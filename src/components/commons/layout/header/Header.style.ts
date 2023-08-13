@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
+import { Common } from "../../../../commons/style/emotion";
 
 export const Wrapper = styled.header`
   position: fixed;
+  z-index: 999;
   width: 100vw;
   height: 120px;
-  padding: 0 60px;
   background: #ebeae6;
 `;
 
@@ -20,6 +21,6 @@ export const Logo = styled.img`
 
 export const MenuWrapper = styled.div`
   height: 50px;
-  border-top: 2px solid #282b26;
-  border-bottom: 2px solid #282b26;
+  border-top: ${Common.line.style};
+  border-bottom: ${Common.line.style};
 `;

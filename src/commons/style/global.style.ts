@@ -1,7 +1,17 @@
 import { css } from "@emotion/react";
+import { Common } from "./emotion";
+import styled from "@emotion/styled";
+import { mediaQuery } from "./mediaQuery.style";
 
 export const GlobalStyle = css`
-  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;700;900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Rubik+Mono+One&display=swap");
+  @font-face {
+    font-family: "Chosunilbo_myungjo";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
   * {
     margin: 0;
     box-sizing: border-box;
@@ -11,11 +21,11 @@ export const GlobalStyle = css`
     }
   }
   body {
-    font-family: "DM Sans", sans-serif;
+    font-family: ${Common.font.default};
     font-weight: 400;
     font-size: 16px;
-    color: #333333;
-    background: #ebeae6;
+    color: ${Common.color.default};
+    background: ${Common.color.bg};
   }
   em {
     font-style: normal;
@@ -50,5 +60,15 @@ export const GlobalStyle = css`
     font-size: 15px;
     line-height: 23px;
     color: #bdbdbd;
+  }
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  ${mediaQuery[0]} {
+    padding: 0 20px;
   }
 `;

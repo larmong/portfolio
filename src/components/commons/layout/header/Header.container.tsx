@@ -3,6 +3,7 @@ import { Logo, LogoWrapper, Wrapper, MenuWrapper } from "./Header.style";
 import { ITypeMenuList } from "./Header.types";
 import { CustomMouseEvent } from "../../../../commons/types/global.types";
 import Menu from "../menu/Menu.container";
+import { Container } from "../../../../commons/style/global.style";
 
 export default function Header() {
   const router = useRouter();
@@ -31,12 +32,14 @@ export default function Header() {
 
   return (
     <Wrapper>
-      <LogoWrapper>
-        <Logo src="images/larmong.svg" alt="larmong" />
-      </LogoWrapper>
-      <MenuWrapper>
-        <Menu menuList={menuList} onClickMoveToMenu={onClickMoveToMenu} />
-      </MenuWrapper>
+      <Container>
+        <LogoWrapper>
+          <Logo src="images/larmong.svg" alt="larmong" />
+        </LogoWrapper>
+        <MenuWrapper>
+          <Menu menuList={menuList} onClickMoveToMenu={onClickMoveToMenu} />
+        </MenuWrapper>
+      </Container>
     </Wrapper>
   );
 }
