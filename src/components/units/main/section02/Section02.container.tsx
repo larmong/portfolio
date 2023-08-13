@@ -1,46 +1,96 @@
+import { useState } from "react";
+import { useRouter } from "next/router";
+import { BsArrowRightCircle } from "react-icons/bs";
+import {
+  Contents,
+  TabMainTitle,
+  TabTitle,
+  TitleContainer,
+  Wrapper,
+  TabWrapper,
+  TabBtn,
+} from "./Section02.style";
 import Tab from "../../../commons/tab/Tab.container";
 import Title from "../../../commons/title/Title.container";
-import { TitleContainer, Wrapper } from "./Section02.style";
-import { FaUserLarge } from "react-icons/fa6";
+import TabIntro from "./intro/Intro.container";
+import TabProfile from "./profile/Profile.container";
+import TabSkill from "./skill/Skill.container";
+import TabFile from "./file/File.container";
+import { ITypeTabList } from "../../../commons/tab/Tab.types";
 
 export default function Section02() {
-  const tabTitle = {
-    icon: <FaUserLarge />,
-    title: "Profile",
-  };
-  const tabList = [
+  const router = useRouter();
+
+  const [tabList, setTabList] = useState([
     {
-      title: "Profile",
-      contents: "It's about me and my skill. Click if you want to know.",
+      title: "Intro",
+      contents: "Various works created with JavaScript.",
       number: "01",
       view: true,
     },
     {
-      title: "Skill",
-      contents: "WebSiteIt's a website I made. I made various websites.",
+      title: "Profile",
+      contents: "It's about me and my skill. Click if you want to know.",
       number: "02",
       view: false,
     },
     {
-      title: "Website",
-      contents: "MobileIt's a mobile website I made. Click if you're curious.",
+      title: "Skill",
+      contents: "WebSiteIt's a website I made. I made various websites.",
       number: "03",
       view: false,
     },
     {
-      title: "Mobile",
-      contents: "Various works created with JavaScript.",
+      title: "File",
+      contents: "MobileIt's a mobile website I made. Click if you're curious.",
       number: "04",
       view: false,
     },
-  ];
+  ]);
+  const [tabTitle, setTabTitle] = useState("Intro");
+
+  const onClickMoveTab = (title: string) => () => {
+    const updatedTabList = tabList.map((tab: ITypeTabList) => ({
+      ...tab,
+      view: tab.title === title,
+    }));
+    setTabList(updatedTabList);
+    setTabTitle(title);
+  };
+
+  const onClickMoveAboutMe = () => {
+    void router.push("/aboutme");
+  };
 
   return (
     <Wrapper>
       <TitleContainer>
         <Title paddingValue="50" titleName="about me" titleNum="02" />
       </TitleContainer>
-      <Tab tabTitle={tabTitle} tabList={tabList} />
+      <TabWrapper>
+        <TabMainTitle>
+          <TabTitle>{tabTitle}</TabTitle>
+          <TabBtn onClick={onClickMoveAboutMe}>
+            <BsArrowRightCircle />
+          </TabBtn>
+        </TabMainTitle>
+        <Tab tabList={tabList} onClickMoveTab={onClickMoveTab} />
+      </TabWrapper>
+      {tabList.map((el) => (
+        <Contents key={el.title}>
+          {el.view && el.title === "Intro" ? (
+            <TabIntro />
+          ) : el.view && el.title === "Profile" ? (
+            <TabProfile />
+          ) : el.view && el.title === "Skill" ? (
+            <TabSkill />
+          ) : el.view && el.title === "File" ? (
+            <TabFile />
+          ) : (
+            ""
+          )}
+        </Contents>
+      ))}
     </Wrapper>
   );
 }

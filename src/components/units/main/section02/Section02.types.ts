@@ -1,3 +1,4 @@
-export interface IWidthValue {
+export interface ITabValue {
   isActive: boolean;
+  tabLength: number;
 }

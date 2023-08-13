@@ -1,6 +1,6 @@
 export interface IPropsTab {
   tabList: ITypeTabList[];
-  tabTitle: ITypeTabTitle;
+  onClickMoveTab: (title: string) => () => void;
 }
 
 export interface ITypeTabList {
@@ -8,9 +8,4 @@ export interface ITypeTabList {
   contents: string;
   number: string;
   view: boolean;
-}
-
-export interface ITypeTabTitle {
-  icon: any;
-  title: string;
 }
