@@ -24,8 +24,9 @@ export const GlobalStyle = css`
     font-family: ${Common.font.default};
     font-weight: 400;
     font-size: 16px;
-    color: ${Common.color.default};
-    background: ${Common.color.bg};
+    color: ${Common.color.white};
+    background-image: url("/images/noise-background.jpg");
+    background-size: contain;
   }
   em {
     font-style: normal;

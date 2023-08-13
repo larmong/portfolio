@@ -8,15 +8,11 @@ export const ProgressScrollBar = styled.div`
   left: 0;
   width: 100%;
   height: 14px;
-  border-top: 2px solid ${Common.color.default};
-  .progress-bar {
-    height: 100%;
-    background: ${Common.color.default};
-    width: 0;
-  }
+  border-top: 1px solid ${Common.color.white};
+  background: ${Common.color.default};
 `;
 export const ScrollBar = styled.div`
   height: 100%;
-  background: ${Common.color.default};
+  background: ${Common.color.white};
   width: 0;
 `;

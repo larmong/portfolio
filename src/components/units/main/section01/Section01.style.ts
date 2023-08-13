@@ -16,7 +16,7 @@ export const ContentContainer = styled.div`
 
 export const ContentLeft = styled.div`
   width: 45%;
-  background: rgba(0, 0, 0, 0.16);
+  background: rgba(255, 255, 255, 0.05);
 `;
 export const ContentRight = styled.div`
   width: 55%;
@@ -28,16 +28,6 @@ export const ContentRight = styled.div`
   > div:last-of-type {
     border-bottom: none;
   }
-`;
-
-export const SectionTitle = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 10%;
-  font-size: 1.4em;
-  font-weight: 600;
-  max-font-size: 120px;
 `;
 
 export const Contents = styled.div`
@@ -104,13 +94,13 @@ export const Icon = styled(FiArrowUpRight)`
   height: 26px;
 `;
 
-export const TitleWrapper = styled.div`
+export const IntroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 50%;
 `;
-export const Title = styled(Fade)`
+export const IntroTitle = styled(Fade)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,7 +118,7 @@ export const Full = styled.div`
 `;
 export const Empty = styled.div`
   color: transparent;
-  -webkit-text-stroke: 2px ${Common.color.default};
+  -webkit-text-stroke: 2px ${Common.color.white};
 `;
 
 export const Text = styled.div`

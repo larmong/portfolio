@@ -8,7 +8,7 @@ export const Wrapper = styled.header`
   z-index: 999;
   width: 100vw;
   height: 120px;
-  background: ${Common.color.bg};
+  background-image: url("/images/noise-background.jpg");
 `;
 
 export const LogoWrapper = styled.h1`

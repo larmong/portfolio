@@ -3,20 +3,20 @@ import {
   ContentRight,
   Icon,
   Contents,
-  Title,
   Wrapper,
   Des,
   Link,
-  SectionTitle,
   Empty,
   Full,
   Text,
   ContentContainer,
-  TitleWrapper,
+  IntroWrapper,
+  IntroTitle,
 } from "./Section01.style";
 import { JackInTheBox } from "react-awesome-reveal";
 import { ITypeLinkList } from "./Section01.types";
 import ProgressBar from "../../../commons/progress/Progress01.container";
+import Title from "../../../commons/title/Title.container";
 
 export default function Section01() {
   const linkList: ITypeLinkList[] = [
@@ -38,12 +38,9 @@ export default function Section01() {
     <Wrapper>
       <ProgressBar />
       <ContentContainer>
-        <ContentLeft>이미지</ContentLeft>
+        <ContentLeft></ContentLeft>
         <ContentRight>
-          <SectionTitle>
-            <span>portfolio</span>
-            <span>#01</span>
-          </SectionTitle>
+          <Title paddingValue="0" titleName="portfolio" titleNum="01" />
           <Contents>
             <Des>
               <span>web frontend</span>
@@ -59,8 +56,8 @@ export default function Section01() {
               ))}
             </Link>
           </Contents>
-          <TitleWrapper>
-            <Title cascade>
+          <IntroWrapper>
+            <IntroTitle cascade>
               <Full>
                 <JackInTheBox cascade damping={0.1}>
                   <span>l</span>
@@ -82,8 +79,8 @@ export default function Section01() {
                   <span>.</span>
                 </JackInTheBox>
               </Empty>
-            </Title>
-          </TitleWrapper>
+            </IntroTitle>
+          </IntroWrapper>
           <Text>
             안녕하세요😊 :)
             <br />

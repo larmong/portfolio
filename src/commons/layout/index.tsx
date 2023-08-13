@@ -8,7 +8,7 @@ interface ILayoutProps {
 }
 
 const Page = styled.div`
-  padding: 120px 0 1000px 0;
+  padding: 120px 0 0 0;
 `;
 
 export default function Layout(props: ILayoutProps) {
