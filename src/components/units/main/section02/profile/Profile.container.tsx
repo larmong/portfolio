@@ -29,34 +29,38 @@ export default function TabProfile() {
       <LeftText>
         <Content triggerOnce={true}>
           <span>
+            처음은&nbsp;
             <em onMouseEnter={handleMouse(1)} onMouseLeave={handleMouse(1)}>
-              새로운 아이디어를 코드로 구현
+              웹디자이너로서 시작
             </em>
-            하는 과정을 즐기며, 사용자 경험을 개선하고 멋진 인터페이스를 구축
-            하는 일에 큰 흥미를 가지고 있습니다. 끊임없이 발전하는 기술 동향을
-            따라가며 배우는 것을 좋아하며,&nbsp;
+            하여 웹디자인과 사용자 경험에 대한 깊은 흥미를 느꼈습니다. 그리고
+            웹퍼블리셔 로 발전하며 디자인이 웹 환경에서 어떻게 구현되는지에 대한
+            이해를 확장하였습니다. 이러한 과정에서 웹 기술에 대한 열정이
+            자라나며,&nbsp;
             <em onMouseEnter={handleMouse(2)} onMouseLeave={handleMouse(2)}>
-              코드를 작성할때 가독성과 유지보수
+              프론트엔드 개발
             </em>
-            를 고려한 코드를 작성하는것에 집중합니다.
+            의 세계에 더욱 빠져들게 되었습니다.
           </span>
         </Content>
         <Content triggerOnce={true}>
           <span>
-            포트폴리오에는 저의 프론트엔드&nbsp;
+            이전의 경험들이 프론트엔드 개발로의 발전을 향한 중요한
+            발판이었습니다. 프론트엔드 개발자로서의 길은 처음부터 완벽하지
+            않았지만, 저의 열정과 호기심은 항상 제게 원동력을 제공하였습니다. 그
+            결과, 기존의 디자인 스킬과 퍼블리싱 경험이 개발 역량을 높이는데 큰
+            도움이 되었습니다.
+          </span>
+        </Content>
+        <Content triggerOnce={true}>
+          <span>
+            또한, 개발자로서의 짧은 기간 동안 더 나은 개발자로 성장하기 위해
+            지속적으로 노력하고 있습니다.&nbsp;
             <em onMouseEnter={handleMouse(3)} onMouseLeave={handleMouse(3)}>
-              개발자로서의 성장과정
+              새로운 프로그래밍 언어와 기술
             </em>
-            을 확인하실 수 있도록 다양한 사이드 프로젝트들을 담았습니다.
-            최근에는 문제 해결 과정을 Readme를 통해 확인 할 수 있도록 정리하며
-            진행하고있습니다.
-          </span>
-        </Content>
-        <Content triggerOnce={true}>
-          <span>
-            포트폴리오를 통해 저에 대해 더 자세히 알아가시면 좋을 것 같습니다.
-            <br />
-            감사합니다:) ☺️
+            을 익히며 사이드 프로젝트에 도전하고, 문제를 해결하는 과정에서
+            끊임없이 발전하고 있습니다.
           </span>
         </Content>
       </LeftText>
@@ -66,15 +70,15 @@ export default function TabProfile() {
           <Image>
             {isHover01 ? (
               <Fade>
-                <img src="/images/gif01.gif" alt="gif01" />
+                <img src="/images/profile1.gif" alt="profile" />
               </Fade>
             ) : isHover02 ? (
               <Fade>
-                <img src="/images/gif02.gif" alt="gif02" />
+                <img src="/images/profile2.gif" alt="profile" />
               </Fade>
             ) : isHover03 ? (
               <Fade>
-                <img src="/images/gif03.gif" alt="gif03" />
+                <img src="/images/profile3.gif" alt="profile" />
               </Fade>
             ) : (
               ""

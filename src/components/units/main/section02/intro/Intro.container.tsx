@@ -66,15 +66,15 @@ export default function TabIntro() {
           <Image>
             {isHover01 ? (
               <Fade>
-                <img src="/images/gif01.gif" alt="gif01" />
+                <img src="/images/intro1.gif" alt="intro" />
               </Fade>
             ) : isHover02 ? (
               <Fade>
-                <img src="/images/gif02.gif" alt="gif02" />
+                <img src="/images/intro2.gif" alt="intro" />
               </Fade>
             ) : isHover03 ? (
               <Fade>
-                <img src="/images/gif03.gif" alt="gif03" />
+                <img src="/images/intro3.gif" alt="intro" />
               </Fade>
             ) : (
               ""
