@@ -5,6 +5,7 @@ import { Slide } from "react-awesome-reveal";
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 100px;
 `;
 
 export const LeftText = styled.div`
