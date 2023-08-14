@@ -3,6 +3,7 @@ import { Common } from "../../../../commons/style/emotion";
 
 export const Wrapper = styled.div`
   border-bottom: ${Common.line.style};
+  margin-bottom: 100px;
 `;
 
 export const TitleContainer = styled.div`

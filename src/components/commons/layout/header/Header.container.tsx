@@ -13,8 +13,12 @@ export default function Header() {
       route: "/",
     },
     {
-      title: "about me",
-      route: "/aboutme",
+      title: "profile",
+      route: "/profile",
+    },
+    {
+      title: "skill",
+      route: "/skill",
     },
     {
       title: "project",

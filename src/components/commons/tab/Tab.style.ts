@@ -56,6 +56,7 @@ export const TabTitle = styled.p`
   gap: 10px;
   font-size: 1em;
   font-weight: bold;
+  text-transform: capitalize;
 `;
 export const TabContents = styled.div``;
 export const TabNumber = styled.span``;

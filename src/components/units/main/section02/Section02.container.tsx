@@ -24,27 +24,27 @@ export default function Section02() {
 
   const [tabList, setTabList] = useState([
     {
-      title: "Intro",
+      title: "intro",
       contents: "Welcome to my portfolio. Discover more in the intro!",
       number: "01",
       view: true,
     },
     {
-      title: "Profile",
+      title: "profile",
       contents:
         "Let me introduce myself. Sharing my journey, skills, and experiences.",
       number: "02",
       view: false,
     },
     {
-      title: "Skill",
+      title: "skill",
       contents:
         "Presenting my skills—a versatile toolkit I bring to every project.",
       number: "03",
       view: false,
     },
     {
-      title: "Pages & PDF",
+      title: "pages & PDF",
       contents:
         "I offer pages with my dev history and downloadable PDF portfolios.",
       number: "04",
@@ -62,8 +62,17 @@ export default function Section02() {
     setTabTitle(title);
   };
 
-  const onClickMoveAboutMe = () => {
-    void router.push("/aboutme");
+  const onClickMovePages = (route: string) => () => {
+    const title = route.toLowerCase();
+    if (title) {
+      if (title === "intro") {
+        void router.push(`/`);
+      } else if (title === "pages & pdf") {
+        void router.push(`/contact`);
+      } else {
+        void router.push(`/${title}`);
+      }
+    }
   };
 
   return (
@@ -74,7 +83,7 @@ export default function Section02() {
       <TabWrapper>
         <TabMainTitle>
           <TabTitle>{tabTitle}</TabTitle>
-          <TabBtn onClick={onClickMoveAboutMe}>
+          <TabBtn onClick={onClickMovePages(tabTitle)}>
             <BsArrowRightCircle />
           </TabBtn>
           <DetailImg src="/images/detail.png" alt="detail" />
@@ -83,13 +92,13 @@ export default function Section02() {
       </TabWrapper>
       {tabList.map((el) => (
         <Contents key={el.title}>
-          {el.view && el.title === "Intro" ? (
+          {el.view && el.title === "intro" ? (
             <TabIntro />
-          ) : el.view && el.title === "Profile" ? (
+          ) : el.view && el.title === "profile" ? (
             <TabProfile />
-          ) : el.view && el.title === "Skill" ? (
+          ) : el.view && el.title === "skill" ? (
             <TabSkill />
-          ) : el.view && el.title === "Pages & PDF" ? (
+          ) : el.view && el.title === "pages & PDF" ? (
             <TabPage />
           ) : (
             ""
