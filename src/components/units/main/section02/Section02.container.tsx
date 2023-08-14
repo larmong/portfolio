@@ -15,7 +15,7 @@ import Title from "../../../commons/title/Title.container";
 import TabIntro from "./intro/Intro.container";
 import TabProfile from "./profile/Profile.container";
 import TabSkill from "./skill/Skill.container";
-import TabFile from "./file/File.container";
+import TabPage from "./page/Page.container";
 import { ITypeTabList } from "../../../commons/tab/Tab.types";
 
 export default function Section02() {
@@ -43,9 +43,9 @@ export default function Section02() {
       view: false,
     },
     {
-      title: "File",
+      title: "Pages & PDF",
       contents:
-        "Grab your resume and portfolio as downloadable PDFs for insights.",
+        "I offer pages with my dev history and downloadable PDF portfolios.",
       number: "04",
       view: false,
     },
@@ -87,8 +87,8 @@ export default function Section02() {
             <TabProfile />
           ) : el.view && el.title === "Skill" ? (
             <TabSkill />
-          ) : el.view && el.title === "File" ? (
-            <TabFile />
+          ) : el.view && el.title === "Pages & PDF" ? (
+            <TabPage />
           ) : (
             ""
           )}
