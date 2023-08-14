@@ -9,6 +9,7 @@ import {
   Wrapper,
   TabWrapper,
   TabBtn,
+  DetailImg,
 } from "./Section02.style";
 import Tab from "../../../commons/tab/Tab.container";
 import Title from "../../../commons/title/Title.container";
@@ -76,6 +77,7 @@ export default function Section02() {
           <TabBtn onClick={onClickMoveAboutMe}>
             <BsArrowRightCircle />
           </TabBtn>
+          <DetailImg src="/images/detail.png" alt="detail" />
         </TabMainTitle>
         <Tab tabList={tabList} onClickMoveTab={onClickMoveTab} />
       </TabWrapper>

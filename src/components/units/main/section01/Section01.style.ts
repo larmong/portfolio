@@ -64,6 +64,7 @@ export const Link = styled.div`
   gap: 10px;
   cursor: pointer;
   span {
+    transition: all 0.3s ease-in-out;
     position: relative;
     display: flex;
     align-items: center;
@@ -83,6 +84,7 @@ export const Link = styled.div`
       background: ${Common.color.highlighter};
     }
     &:hover {
+      color: ${Common.color.default};
       &::before {
         width: calc(100% + 6px);
       }

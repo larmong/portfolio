@@ -17,10 +17,17 @@ export const Contents = styled.div`
 `;
 
 export const TabMainTitle = styled.div`
+  position: relative;
   width: 30%;
   p {
     font-size: 3em;
   }
+`;
+export const DetailImg = styled.img`
+  width: 160px;
+  position: absolute;
+  top: 160px;
+  left: 35px;
 `;
 
 export const TabTitle = styled.p`
