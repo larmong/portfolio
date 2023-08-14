@@ -24,25 +24,28 @@ export default function Section02() {
   const [tabList, setTabList] = useState([
     {
       title: "Intro",
-      contents: "Various works created with JavaScript.",
+      contents: "Welcome to my portfolio. Discover more in the intro!",
       number: "01",
       view: true,
     },
     {
       title: "Profile",
-      contents: "It's about me and my skill. Click if you want to know.",
+      contents:
+        "Let me introduce myself. Sharing my journey, skills, and experiences.",
       number: "02",
       view: false,
     },
     {
       title: "Skill",
-      contents: "WebSiteIt's a website I made. I made various websites.",
+      contents:
+        "Presenting my skills—a versatile toolkit I bring to every project.",
       number: "03",
       view: false,
     },
     {
       title: "File",
-      contents: "MobileIt's a mobile website I made. Click if you're curious.",
+      contents:
+        "Grab your resume and portfolio as downloadable PDFs for insights.",
       number: "04",
       view: false,
     },

@@ -1,7 +1,8 @@
-import { Fragment } from "react";
-import Header from "../../components/commons/layout/header/Header.container";
-import styled from "@emotion/styled";
 import { Container } from "../style/global.style";
+import { Fragment } from "react";
+import styled from "@emotion/styled";
+import Header from "../../components/commons/layout/header/Header.container";
+import Footer from "../../components/commons/layout/footer/Footer.container";
 
 interface ILayoutProps {
   children: JSX.Element;
@@ -17,6 +18,7 @@ export default function Layout(props: ILayoutProps) {
       <Header />
       <Container>
         <Page>{props.children}</Page>
+        <Footer />
       </Container>
     </Fragment>
   );
