@@ -24,6 +24,6 @@ export const PageIcon = styled.li`
     height: 100%;
   }
   &:hover {
-    opacity: 0.7;
+    opacity: 0.6;
   }
 `;
