@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Common } from "../../../commons/style/emotion";
+import { Common } from "../../../../commons/style/emotion";
 
 export const ProgressScrollBar = styled.div`
   position: fixed;

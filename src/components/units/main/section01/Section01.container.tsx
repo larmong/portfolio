@@ -15,7 +15,7 @@ import {
 } from "./Section01.style";
 import { JackInTheBox } from "react-awesome-reveal";
 import { ITypeLinkList } from "./Section01.types";
-import ProgressBar from "../../../commons/progress/Progress01.container";
+import Progress01 from "../../../commons/progresses/progress01/Progress01.container";
 import Title from "../../../commons/title/Title.container";
 
 export default function Section01() {
@@ -36,7 +36,7 @@ export default function Section01() {
 
   return (
     <Wrapper>
-      <ProgressBar />
+      <Progress01 />
       <ContentContainer>
         <ContentLeft></ContentLeft>
         <ContentRight>

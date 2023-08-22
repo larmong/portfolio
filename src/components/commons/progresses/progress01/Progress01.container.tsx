@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ProgressScrollBar, ScrollBar } from "./Progress01.style";
 
-export default function ProgressBar() {
+export default function Progress01() {
   const [scrolled, setScrolled] = useState("0%");
 
   const showScrollProgress = () => {
