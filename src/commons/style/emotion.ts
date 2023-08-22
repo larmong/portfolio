@@ -18,4 +18,7 @@ export const Common = {
     point: "'Rubik Mono One', sans-serif;",
     text: "'Chosunilbo_myungjo', sans-serif;",
   },
+  gradation: {
+    point: "conic-gradient(#fa709a 0%, #fee140 100%)",
+  },
 };

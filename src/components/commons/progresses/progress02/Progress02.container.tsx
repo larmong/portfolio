@@ -1,23 +1,28 @@
-import { Progress, Wrapper } from "./Progress02.style";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { DonutProgress, ProgressCont, Wrapper } from "./Progress02.style";
 
-export default function Progress02({ done }: any) {
-  const [style, setStyle] = useState({});
+export default function Progress02({ progress, color }: any) {
+  const [percent, setPercent] = useState(0);
 
-  setTimeout(() => {
-    const newStyle = {
-      opacity: 1,
-      width: `${done}%`,
-    };
+  useEffect(() => {
+    let t = 0;
+    const animation = setInterval(() => {
+      setPercent(t);
+      t >= progress && clearInterval(animation);
+      t++;
+    }, 20);
 
-    setStyle(newStyle);
-  }, 500);
+    return () => clearInterval(animation);
+  }, [progress]);
 
   return (
     <Wrapper>
-      <Progress className="progress-done" style={style}>
-        {done}%
-      </Progress>
+      <DonutProgress
+        style={{
+          background: `conic-gradient(#${color} 0% ${percent}%, #ffffff ${percent}% 100%)`,
+        }}
+      ></DonutProgress>
+      <ProgressCont></ProgressCont>
     </Wrapper>
   );
 }
