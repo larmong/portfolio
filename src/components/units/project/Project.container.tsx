@@ -7,10 +7,11 @@ import {
 } from "./Project.style";
 import { useEffect, useState } from "react";
 import { ITypeTabList } from "./Project.types";
-import { ITypeProject } from "../../../commons/server/json/json.types";
+import { ITypeProject } from "../../../commons/data/json.types";
 import Progress01 from "../../commons/progresses/progress01/Progress01.container";
 import ProjectItem from "./item/Item.container";
-import enableMirageMock from "../../../../src/commons/server/index";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "../../../commons/libraries/firebase/firebase.config";
 
 export default function Project() {
   const [tabList, setTabList] = useState<ITypeTabList[]>([
@@ -41,22 +42,27 @@ export default function Project() {
   const [projects, setProjects] = useState<ITypeProject[]>([]);
 
   useEffect(() => {
-    enableMirageMock();
     const getCategories = async () => {
       if (!isData) {
-        try {
-          const result = await fetch("/projects").then((res: Response) =>
-            res.json()
-          );
-          setAllProjects(result.data);
+        const data = await query(
+          collection(db, "projects"),
+          orderBy("num", "desc")
+        );
+        const getData = await getDocs(data);
+        const result: any = getData.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
 
-          const filteredProducts = result.data.filter(
-            (product: ITypeProject) => product.categoryId === isCate
-          );
+        setAllProjects(result);
+        console.log(result);
 
-          setProjects(filteredProducts);
-          setIsData(true);
-        } catch (error) {}
+        const filteredProducts = result.filter(
+          (product: ITypeProject) => product.categoryId === isCate
+        );
+
+        setProjects(filteredProducts);
+        setIsData(true);
       } else {
         const filteredProducts = allProjects.filter(
           (product: ITypeProject) => product.categoryId === isCate

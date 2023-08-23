@@ -1,4 +1,4 @@
-import { ITypeProject } from "../../../../commons/server/json/json.types";
+import { ITypeProject } from "../../../../commons/data/json.types";
 
 export interface IPropsProjectItem {
   data: ITypeProject[];

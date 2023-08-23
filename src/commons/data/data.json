@@ -1,0 +1,48 @@
+[
+  {
+    "categoryId": "Web Page",
+    "startDate": "2023.05",
+    "endDate": "2023.07",
+    "title": "따릉이 클라이언트",
+    "thumb": "",
+    "cont": "따릉이 파인더는 서울시 공공자전거 대여 서비스인 따릉이 웹사이트를 기반으로 리디자인한 반응형 웹사이트입니다. 개인 프로젝트이지만 디자인부터 프론트, 백엔드까지 모두 개인으로 진행하다 보니 생각보다 시간이 많이 걸렸지만 그만큼 프론트엔드 업무뿐만 아니라 디자인과 백엔드를 이해하는 것에도 도움이 되었습니다. 특히, RestAPI를 GraphQL로 감싸는 방법을 공부하면서 직접 GraphQL API를 만들어보는 재미를 느꼈고, Github, Netlify, Heroku, AWS 등 4개의 사이트에 배포하면서 정적 웹사이트와 동적 웹사이트의 차이와 각 플랫폼의 차이를 알 수 있었습니다. 배포 이후에도 자체적인 QA를 통해서 이슈들을 수정하면서 해결하고 있습니다.",
+    "skills": [
+      "design",
+      "node",
+      "next",
+      "react",
+      "emotion",
+      "firebase",
+      "graphql"
+    ],
+    "view": {
+      "code": "https://github.com/larmong/bike-finder",
+      "page": "https://bike-finder-larmong.netlify.app/"
+    }
+  },
+  {
+    "categoryId": "Web Page",
+    "startDate": "2023.07",
+    "endDate": "2023.08",
+    "title": "따릉이 어드민페이지",
+    "thumb": "",
+    "cont": "개인 프로젝트로 진행한 BikeFinder의 관리자 페이지입니다. 전반적인 상황을 한눈에 파악할 수 있는 대시보드와 각 상세 데이터를 확인하고 관리할 수 있는 웹페이지입니다. 따릉이 클라이언트 페이지에서 만들었던 컴포넌트를 재사용하여 비교적 빠른 시간에 완성 한 웹사이트입니다. 재사용하면서 생겼던 작은 이슈들을 통해 컴포넌트를 만들 때 가독성, 확장성, 결합성, 재사용성이 중요하다는 것을 깨달을 수 있는 프로젝트였습니다.",
+    "skills": ["design", "node", "next", "react", "emotion", "firebase"],
+    "view": {
+      "code": "https://github.com/larmong/bikefinder-admin",
+      "page": "https://bikefinder-admin.netlify.app/"
+    }
+  },
+  {
+    "categoryId": "Web Page",
+    "startDate": "2023.08",
+    "endDate": "2023 포트폴리오",
+    "title": "",
+    "thumb": "2023년 버전 포트폴리오 사이트입니다. 개인 도메인을 구매하여 연동하였고, 프로젝트 데이터들은 MirageJS를 사용하여 페이크서버를 만들어서 진행해보았습니다.",
+    "cont": ["design", "node", "next", "react", "emotion", "mirage"],
+    "view": {
+      "code": "https://github.com/larmong/portfolio",
+      "page": "https://larmong.site/"
+    }
+  }
+]

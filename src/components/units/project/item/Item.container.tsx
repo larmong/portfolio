@@ -12,7 +12,7 @@ import {
 } from "./Item.style";
 import { FaCodepen, FaGithub } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
-import { ITypeProject } from "../../../../commons/server/json/json.types";
+import { ITypeProject } from "../../../../commons/data/json.types";
 import { IPropsProjectItem } from "./Item.types";
 import AllIcon from "./icon/Icon.container";
 import { FiImage } from "react-icons/fi";
@@ -31,7 +31,11 @@ export default function ProjectItem(props: IPropsProjectItem) {
             <Thumb></Thumb>
             <Project>
               <Title>{el.title}</Title>
-              <Date>{`${el.startDate} ~ ${el.endDate}`}</Date>
+              <Date>
+                {el.date === undefined
+                  ? `${el.startDate} ~ ${el.endDate}`
+                  : el.date}
+              </Date>
               <Cont>{el.cont}</Cont>
               <Skills>
                 {el.skills.map((skill: string, num: number) => (
