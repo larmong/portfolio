@@ -1,4 +1,5 @@
 export interface ITypeProject {
+  id?: string;
   categoryId: string;
   date?: string;
   startDate?: string;
@@ -8,6 +9,7 @@ export interface ITypeProject {
   cont: string;
   skills: string[];
   view: ITypeView;
+  num: number;
 }
 
 export interface ITypeView {

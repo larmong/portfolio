@@ -18,7 +18,6 @@ export default function ProjectAdd() {
   const router = useRouter();
   const [isType, setIsType] = useState("Web Page");
   const [data, setData] = useState({
-    categoryId: isType,
     startDate: "",
     endDate: "",
     title: "",
@@ -31,7 +30,6 @@ export default function ProjectAdd() {
     },
   });
   const [data2, setData2] = useState({
-    categoryId: isType,
     date: "",
     title: "",
     thumb: "",
@@ -80,10 +78,12 @@ export default function ProjectAdd() {
       const docRef = doc(collection(db, "projects"));
       if (isType === "Web Page" || isType === "Mobile") {
         await setDoc(docRef, {
+          categoryId: isType,
           ...data,
         });
       } else {
         await setDoc(docRef, {
+          categoryId: isType,
           ...data2,
         });
       }

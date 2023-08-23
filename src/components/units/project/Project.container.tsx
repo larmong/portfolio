@@ -5,13 +5,13 @@ import {
   TabTitle,
   Wrapper,
 } from "./Project.style";
+import { db } from "../../../commons/libraries/firebase/firebase.config";
 import { useEffect, useState } from "react";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { ITypeTabList } from "./Project.types";
-import { ITypeProject } from "../../../commons/data/json.types";
+import { ITypeProject } from "../../../commons/libraries/firebase/data.types";
 import Progress01 from "../../commons/progresses/progress01/Progress01.container";
 import ProjectItem from "./item/Item.container";
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
-import { db } from "../../../commons/libraries/firebase/firebase.config";
 
 export default function Project() {
   const [tabList, setTabList] = useState<ITypeTabList[]>([
@@ -46,7 +46,7 @@ export default function Project() {
       if (!isData) {
         const data = await query(
           collection(db, "projects"),
-          orderBy("num", "desc")
+          orderBy("num", "asc")
         );
         const getData = await getDocs(data);
         const result: any = getData.docs.map((doc) => ({

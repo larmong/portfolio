@@ -55,6 +55,7 @@ export const ItemInput = styled.input`
 `;
 
 export const ProjectBtn = styled.div`
+  cursor: pointer;
   padding: 20px 100px;
   margin: 0 auto;
   background: ${Common.color.point};

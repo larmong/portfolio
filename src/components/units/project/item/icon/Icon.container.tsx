@@ -1,22 +1,31 @@
 import { CgFigma } from "react-icons/cg";
 import { FaCss3Alt, FaHtml5, FaNode, FaReact } from "react-icons/fa";
-import { SiStyledcomponents } from "react-icons/si";
+import {
+  SiAdobephotoshop,
+  SiMongodb,
+  SiStyledcomponents,
+} from "react-icons/si";
 import { RiFlutterFill, RiJavascriptFill, RiVuejsFill } from "react-icons/ri";
 import {
   BiLogoFirebase,
   BiLogoGraphql,
+  BiLogoJquery,
   BiLogoTypescript,
 } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
 import { Wrapper, Skill } from "./Icon.style";
-import { PiMountains } from "react-icons/pi";
 
 export default function AllIcon({ skill }: any) {
   return (
     <Wrapper>
-      {skill === "design" ? (
+      {skill === "figma" ? (
         <Skill>
           <CgFigma />
+          <span>{skill}</span>
+        </Skill>
+      ) : skill === "design" ? (
+        <Skill>
+          <SiAdobephotoshop />
           <span>{skill}</span>
         </Skill>
       ) : skill === "html5" ? (
@@ -37,6 +46,11 @@ export default function AllIcon({ skill }: any) {
       ) : skill === "javascript" ? (
         <Skill>
           <RiJavascriptFill />
+          <span>{skill}</span>
+        </Skill>
+      ) : skill === "jquery" ? (
+        <Skill>
+          <BiLogoJquery />
           <span>{skill}</span>
         </Skill>
       ) : skill === "react" ? (
@@ -79,9 +93,9 @@ export default function AllIcon({ skill }: any) {
           <TbBrandNextjs />
           <span>{skill}</span>
         </Skill>
-      ) : skill === "mirage" ? (
+      ) : skill === "mongodb" ? (
         <Skill>
-          <PiMountains />
+          <SiMongodb />
           <span>{skill}</span>
         </Skill>
       ) : (
