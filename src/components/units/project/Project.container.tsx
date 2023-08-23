@@ -1,4 +1,3 @@
-import Progress01 from "../../commons/progresses/progress01/Progress01.container";
 import {
   Contents,
   TabMenu,
@@ -6,16 +5,14 @@ import {
   TabTitle,
   Wrapper,
 } from "./Project.style";
+import { useEffect, useState } from "react";
 import { ITypeTabList } from "./Project.types";
-import { useState } from "react";
-import All from "./all/All.container";
-import Animation from "./animation/Animation.container";
-import Design from "./design/Design.container";
-import Mobile from "./mobile/Mobile.container";
-import WebPage from "./webPage/WebPage.container";
+import { ITypeProject } from "../../../commons/server/json/json.types";
+import Progress01 from "../../commons/progresses/progress01/Progress01.container";
+import ProjectItem from "./item/Item.container";
+import enableMirageMock from "../../../../src/commons/server/index";
 
 export default function Project() {
-  const [tabTitle, setTabTitle] = useState("ALL");
   const [tabList, setTabList] = useState<ITypeTabList[]>([
     {
       title: "ALL",
@@ -38,14 +35,45 @@ export default function Project() {
       view: false,
     },
   ]);
+  const [isCate, setIsCate] = useState<string>("ALL");
+  const [isData, setIsData] = useState<boolean>(false);
+  const [allProjects, setAllProjects] = useState<ITypeProject[]>([]);
+  const [projects, setProjects] = useState<ITypeProject[]>([]);
 
-  const onClickMoveTab = (title: string) => () => {
+  useEffect(() => {
+    enableMirageMock();
+    const getCategories = async () => {
+      if (!isData) {
+        try {
+          const result = await fetch("/projects").then((res: Response) =>
+            res.json()
+          );
+          setAllProjects(result.data);
+
+          const filteredProducts = result.data.filter(
+            (product: ITypeProject) => product.categoryId === isCate
+          );
+
+          setProjects(filteredProducts);
+          setIsData(true);
+        } catch (error) {}
+      } else {
+        const filteredProducts = allProjects.filter(
+          (product: ITypeProject) => product.categoryId === isCate
+        );
+        setProjects(filteredProducts);
+      }
+    };
+    void getCategories();
+  }, [isCate]);
+
+  const onClickMoveTab = (cate: string) => () => {
     const updatedTabList = tabList.map((tab: ITypeTabList) => ({
       ...tab,
-      view: tab.title === title,
+      view: tab.title === cate,
     }));
     setTabList(updatedTabList);
-    setTabTitle(title);
+    setIsCate(cate);
   };
 
   return (
@@ -53,33 +81,17 @@ export default function Project() {
       <Progress01 />
       <TabMenuWrapper>
         {tabList.map((el: ITypeTabList) => (
-          <TabMenu
-            key={el.title}
-            isActive={el.view}
-            onClick={onClickMoveTab(el.title)}
-          >
-            <TabTitle>{el.title}</TabTitle>
+          <TabMenu key={el.title} onClick={onClickMoveTab(el.title)}>
+            <TabTitle isActive={el.view}>{el.title}</TabTitle>
           </TabMenu>
         ))}
       </TabMenuWrapper>
       <Contents>
-        {tabList.map((el: ITypeTabList) => (
-          <Contents key={el.title}>
-            {el.view && el.title === "ALL" ? (
-              <All />
-            ) : el.view && el.title === "Web Page" ? (
-              <WebPage />
-            ) : el.view && el.title === "Mobile" ? (
-              <Mobile />
-            ) : el.view && el.title === "Animation" ? (
-              <Animation />
-            ) : el.view && el.title === "Design" ? (
-              <Design />
-            ) : (
-              ""
-            )}
-          </Contents>
-        ))}
+        {isCate === "ALL" ? (
+          <ProjectItem data={allProjects} />
+        ) : (
+          <ProjectItem data={projects} />
+        )}
       </Contents>
     </Wrapper>
   );

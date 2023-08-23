@@ -2,17 +2,12 @@ import { AppProps } from "next/app";
 import { Global } from "@emotion/react";
 import Layout from "../src/commons/layout";
 import Head from "next/head";
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { GlobalStyle } from "../src/commons/style/global.style";
+import { Fragment } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const client = new ApolloClient({
-    uri: "https://",
-    cache: new InMemoryCache(),
-  });
-
   return (
-    <ApolloProvider client={client}>
+    <Fragment>
       <Head>
         <title>larmong portfolio</title>
         <link rel="icon" href="public/images/larmong.svg" />
@@ -21,6 +16,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </ApolloProvider>
+    </Fragment>
   );
 }

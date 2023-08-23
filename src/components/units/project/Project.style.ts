@@ -1,63 +1,44 @@
 import styled from "@emotion/styled";
-import { Common } from "../../../commons/style/emotion";
 import { ITabValue } from "./Project.types";
+import { Common } from "../../../commons/style/emotion";
 
 export const Wrapper = styled.div`
-  margin-bottom: 200px;
+  margin-top: 60px;
+  margin-bottom: 100px;
 `;
 
 export const TabMenuWrapper = styled.div`
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  gap: 50px;
-  width: 100%;
-  margin: 50px 0 80px 0;
+  gap: 100px;
+  background-image: url("/images/noise-background.jpg");
+  z-index: 999;
+  width: 100vw;
+  max-width: 1400px;
+  border-bottom: ${Common.line.style};
 `;
 
 export const TabMenu = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  width: 140px;
   padding: 1em 0;
   cursor: pointer;
-  &::before {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: "";
-    width: 100%;
-    height: 1px;
-    background: ${Common.color.white};
-    opacity: 0.5;
-    z-index: 1;
-  }
-  &::after {
-    transition: all 0.3s ease-in-out;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: "";
-    width: ${(props: ITabValue) => (props.isActive ? "100%" : "0px")};
-    height: 1px;
-    background: ${Common.color.white};
-    z-index: 2;
-  }
-  &:hover {
-    &::after {
-      width: 100%;
-    }
-  }
 `;
+
 export const TabTitle = styled.p`
   display: flex;
   align-items: center;
   gap: 10px;
+  font-weight: 500;
+  opacity: ${(props: ITabValue) => (props.isActive ? "1" : "0.5")};
   font-size: 1.4em;
-  font-weight: bold;
   text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 export const Contents = styled.div`

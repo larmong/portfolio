@@ -1,10 +1,7 @@
 import styled from "@emotion/styled";
 import { Common } from "../../../../commons/style/emotion";
-import { css } from "@emotion/react";
 
-export const Wrapper = styled.div`
-  border-bottom: ${Common.line.style};
-`;
+export const Wrapper = styled.div``;
 
 export const Contents = styled.div`
   display: flex;
@@ -12,7 +9,7 @@ export const Contents = styled.div`
   width: 100%;
   height: 700px;
   padding: 60px 30px;
-  border-top: ${Common.line.style};
+  border-bottom: ${Common.line.style};
 `;
 
 export const Thumb = styled.div`
@@ -78,6 +75,9 @@ export const ViewBtn = styled.div`
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.5, 0.24, 0, 1);
+  &.view {
+    padding: 22px 200px;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -92,11 +92,9 @@ export const ViewBtn = styled.div`
     -webkit-transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
     transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
   }
-
   &:hover::before {
     width: calc(100% + 2px);
   }
-
   &::after {
     content: "";
     position: absolute;
@@ -109,11 +107,9 @@ export const ViewBtn = styled.div`
     -webkit-transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
     transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
   }
-
   &:hover::after {
     width: calc(100% + 2px);
   }
-
   &:hover {
     border-left: 1px solid ${Common.color.sub};
     border-right: 1px solid ${Common.color.sub};

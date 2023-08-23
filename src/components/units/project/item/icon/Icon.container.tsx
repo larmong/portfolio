@@ -9,6 +9,7 @@ import {
 } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
 import { Wrapper, Skill } from "./Icon.style";
+import { PiMountains } from "react-icons/pi";
 
 export default function AllIcon({ skill }: any) {
   return (
@@ -76,6 +77,11 @@ export default function AllIcon({ skill }: any) {
       ) : skill === "next" ? (
         <Skill>
           <TbBrandNextjs />
+          <span>{skill}</span>
+        </Skill>
+      ) : skill === "mirage" ? (
+        <Skill>
+          <PiMountains />
           <span>{skill}</span>
         </Skill>
       ) : (
