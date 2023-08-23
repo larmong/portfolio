@@ -13,15 +13,9 @@ import {
   SkillTitle,
   Wrapper,
 } from "./Skill.style";
-import {
-  FaCss3Alt,
-  FaFigma,
-  FaHtml5,
-  FaJava,
-  FaReact,
-  FaVuejs,
-} from "react-icons/fa";
+import { FaCss3Alt, FaFigma, FaHtml5, FaReact, FaVuejs } from "react-icons/fa";
 import { ITypeSkills } from "./Skill.types";
+import Progress01 from "../../commons/progresses/progress01/Progress01.container";
 
 export default function Skill() {
   const skills: ITypeSkills[] = [
@@ -84,6 +78,7 @@ export default function Skill() {
   ];
   return (
     <Wrapper>
+      <Progress01 />
       <SkillsWrapper>
         <Skills
           direction="up"

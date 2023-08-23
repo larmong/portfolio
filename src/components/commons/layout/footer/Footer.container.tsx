@@ -29,8 +29,10 @@ export default function Footer() {
   return (
     <Wrapper>
       <Pages>
-        {icon_list.map((el) => (
-          <PageIcon onClick={onClickMoveToSite(el.url)}>{el.icon}</PageIcon>
+        {icon_list.map((el, index: number) => (
+          <PageIcon key={index} onClick={onClickMoveToSite(el.url)}>
+            {el.icon}
+          </PageIcon>
         ))}
       </Pages>
       <Copy>copyright ⓒ 2023 All rights reserved by larmong.</Copy>

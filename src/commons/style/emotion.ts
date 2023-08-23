@@ -6,6 +6,7 @@ export const Common = {
     highlighter: "#ffbc8d",
     border: "#282b26",
     bg: "#ebeae6",
+    sub: "#ffbd77",
   },
   line: {
     style: `1px solid #ebeae6`,
@@ -19,6 +20,6 @@ export const Common = {
     text: "'Chosunilbo_myungjo', sans-serif;",
   },
   gradation: {
-    point: "conic-gradient(#fa709a 0%, #fee140 100%)",
+    point: "linear-gradient(319deg, #ffbd77 0%, #f0f4a4 37%, #acfcd9 100%);",
   },
 };
