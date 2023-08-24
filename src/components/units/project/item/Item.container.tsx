@@ -11,12 +11,12 @@ import {
   Wrapper,
 } from "./Item.style";
 import { FaCodepen, FaGithub } from "react-icons/fa";
-import { Slide } from "react-awesome-reveal";
-import { ITypeProject } from "../../../../commons/data/json.types";
-import { IPropsProjectItem } from "./Item.types";
-import AllIcon from "./icon/Icon.container";
 import { FiImage } from "react-icons/fi";
 import { MdWeb } from "react-icons/md";
+import { Slide } from "react-awesome-reveal";
+import { IPropsProjectItem } from "./Item.types";
+import { ITypeProject } from "../../../../commons/libraries/firebase/data.types";
+import AllIcon from "./icon/Icon.container";
 
 export default function ProjectItem(props: IPropsProjectItem) {
   const onClickMoveToView = (url: string) => () => {
@@ -28,7 +28,9 @@ export default function ProjectItem(props: IPropsProjectItem) {
       {props.data.map((el: ITypeProject, index: number) => (
         <Slide key={index} triggerOnce={true} direction="up" cascade={true}>
           <Contents>
-            <Thumb></Thumb>
+            <Thumb>
+              <img src={el.thumb} alt="썸네일" />
+            </Thumb>
             <Project>
               <Title>{el.title}</Title>
               <Date>

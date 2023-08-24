@@ -15,7 +15,13 @@ export const Contents = styled.div`
 export const Thumb = styled.div`
   width: 45%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  img {
+    width: 100%;
+  }
 `;
 
 export const Project = styled.div`

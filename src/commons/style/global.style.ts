@@ -19,6 +19,10 @@ export const GlobalStyle = css`
       width: 0;
       background: transparent;
     }
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   body {
     font-family: ${Common.font.default};

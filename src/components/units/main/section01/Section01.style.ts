@@ -16,7 +16,10 @@ export const ContentContainer = styled.div`
 
 export const ContentLeft = styled.div`
   width: 45%;
-  background: rgba(255, 255, 255, 0.05);
+  background-image: url("/images/main.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
 `;
 export const ContentRight = styled.div`
   width: 55%;
