@@ -34,9 +34,15 @@ export default function ProjectItem(props: IPropsProjectItem) {
             <Project>
               <Title>{el.title}</Title>
               <Date>
-                {el.date === undefined
-                  ? `${el.startDate} ~ ${el.endDate}`
-                  : el.date}
+                {el.date === undefined ? (
+                  <>
+                    {el.startDate === el.endDate
+                      ? `${el.startDate}`
+                      : `${el.startDate} ~ ${el.endDate}`}
+                  </>
+                ) : (
+                  el.date
+                )}
               </Date>
               <Cont>{el.cont}</Cont>
               <Skills>
