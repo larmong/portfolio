@@ -34,17 +34,24 @@ export default function ProjectItem(props: IPropsProjectItem) {
             <Project>
               <Title>{el.title}</Title>
               <Date>
-                {el.date === undefined ? (
-                  <>
-                    {el.startDate === el.endDate
-                      ? `${el.startDate}`
-                      : `${el.startDate} ~ ${el.endDate}`}
-                  </>
-                ) : (
-                  el.date
-                )}
+                {el.startDate === el.endDate
+                  ? `${el.startDate}`
+                  : `${el.startDate} ~ ${el.endDate}`}
               </Date>
-              <Cont>{el.cont}</Cont>
+              <Cont>
+                <li>
+                  <span>◆ 프로젝트 단위</span>
+                  {el.cont.unit}
+                </li>
+                <li>
+                  <span>◆ 최적화</span>
+                  {el.cont.optimization}
+                </li>
+                <li>
+                  <span>◆ 참여율</span>
+                  {el.cont.percent}
+                </li>
+              </Cont>
               <Skills>
                 {el.skills.map((skill: string, num: number) => (
                   <AllIcon key={num} skill={skill} />

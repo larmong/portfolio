@@ -16,12 +16,8 @@ import ProjectItem from "./item/Item.container";
 export default function Project() {
   const [tabList, setTabList] = useState<ITypeTabList[]>([
     {
-      title: "ALL",
-      view: true,
-    },
-    {
       title: "Web Page",
-      view: false,
+      view: true,
     },
     {
       title: "Mobile",
@@ -36,7 +32,7 @@ export default function Project() {
       view: false,
     },
   ]);
-  const [isCate, setIsCate] = useState<string>("ALL");
+  const [isCate, setIsCate] = useState<string>("Web Page");
   const [isData, setIsData] = useState<boolean>(false);
   const [allProjects, setAllProjects] = useState<ITypeProject[]>([]);
   const [projects, setProjects] = useState<ITypeProject[]>([]);
@@ -46,7 +42,7 @@ export default function Project() {
       if (!isData) {
         const data = await query(
           collection(db, "projects"),
-          orderBy("num", "asc")
+          orderBy("num", "desc")
         );
         const getData = await getDocs(data);
         const result: any = getData.docs.map((doc) => ({

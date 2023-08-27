@@ -45,12 +45,18 @@ export const Title = styled.h5`
 export const Date = styled.p`
   font-size: 1.2em;
 `;
-export const Cont = styled.p`
-  width: 80%;
-  text-align: center;
+export const Cont = styled.ul`
   opacity: 0.7;
   font-size: 1em;
   line-height: 1.5em;
+  margin: 0 auto;
+  li {
+    margin: 0 auto;
+    span {
+      display: inline-block;
+      width: 140px;
+    }
+  }
 `;
 
 export const Skills = styled.div`

@@ -18,45 +18,46 @@ export default function ProjectAdd() {
   const router = useRouter();
   const [isType, setIsType] = useState("Web Page");
   const [data, setData] = useState({
+    num: 0,
     startDate: "",
     endDate: "",
     title: "",
     thumb: "",
-    cont: "",
+    cont: {
+      unit: "",
+      optimization: "",
+      percent: "",
+    },
     skills: [""],
     view: {
       code: "",
-      page: "",
+      page: "https://firebasestorage.googleapis.com/v0/b/portfolio-c1747.appspot.com/o/projects%2Fweb%2Fthumb.png?alt=media&token=c132f24b-5bca-4c7f-8de7-6389ec93eb71",
     },
   });
-  const [data2, setData2] = useState({
-    date: "",
-    title: "",
-    thumb: "",
-    cont: "",
-    skills: [""],
-    view: "",
-  });
-
   const onChangeContent = (event: CustomChangeEvent) => {
-    if (isType === "Web Page" || isType === "Mobile") {
-      if (event.target.id === "code" || event.target.id === "page") {
-        setData({
-          ...data,
-          view: {
-            ...data.view,
-            [event.target.id]: event.target.value,
-          },
-        });
-      } else {
-        setData({
-          ...data,
+    if (event.target.id === "code" || event.target.id === "page") {
+      setData({
+        ...data,
+        view: {
+          ...data.view,
           [event.target.id]: event.target.value,
-        });
-      }
+        },
+      });
+    } else if (
+      event.target.id === "unit" ||
+      event.target.id === "optimization" ||
+      event.target.id === "percent"
+    ) {
+      setData({
+        ...data,
+        cont: {
+          ...data.cont,
+          [event.target.id]: event.target.value,
+        },
+      });
     } else {
-      setData2({
-        ...data2,
+      setData({
+        ...data,
         [event.target.id]: event.target.value,
       });
     }
@@ -76,17 +77,10 @@ export default function ProjectAdd() {
   const onClickSubmit = async () => {
     try {
       const docRef = doc(collection(db, "projects"));
-      if (isType === "Web Page" || isType === "Mobile") {
-        await setDoc(docRef, {
-          categoryId: isType,
-          ...data,
-        });
-      } else {
-        await setDoc(docRef, {
-          categoryId: isType,
-          ...data2,
-        });
-      }
+      await setDoc(docRef, {
+        categoryId: isType,
+        ...data,
+      });
       alert("프로젝트가 등록되었습니다!");
       void router.push("/project/add");
     } catch (error) {}
@@ -107,63 +101,48 @@ export default function ProjectAdd() {
           </span>
         ))}
       </ProjectType>
-
-      {isType === "Web Page" || isType === "Mobile" ? (
-        <Project>
-          <Item>
-            <ItemName>startDate</ItemName>
-            <ItemInput type="text" id="startDate" onChange={onChangeContent} />
-          </Item>
-          <Item>
-            <ItemName>endDate</ItemName>
-            <ItemInput type="text" id="endDate" onChange={onChangeContent} />
-          </Item>
-          <Item>
-            <ItemName>title</ItemName>
-            <ItemInput type="text" id="title" onChange={onChangeContent} />
-          </Item>
-          <Item>
-            <ItemName>thumb</ItemName>
-            <ItemInput type="text" id="thumb" onChange={onChangeContent} />
-          </Item>
-          <Item>
-            <ItemName>cont</ItemName>
-            <ItemInput type="text" id="cont" onChange={onChangeContent} />
-          </Item>
-          <Item>
-            <ItemName>code</ItemName>
-            <ItemInput type="text" id="code" onChange={onChangeContent} />
-          </Item>
-          <Item>
-            <ItemName>page</ItemName>
-            <ItemInput type="text" id="page" onChange={onChangeContent} />
-          </Item>
-        </Project>
-      ) : (
-        <Project>
-          <Item>
-            <ItemName>date</ItemName>
-            <ItemInput type="text" id="date" onChange={onChangeContent} />
-          </Item>
-          <Item>
-            <ItemName>title</ItemName>
-            <ItemInput type="text" id="title" onChange={onChangeContent} />
-          </Item>
-          <Item>
-            <ItemName>thumb</ItemName>
-            <ItemInput type="text" id="thumb" onChange={onChangeContent} />
-          </Item>
-          <Item>
-            <ItemName>cont</ItemName>
-            <ItemInput type="text" id="cont" onChange={onChangeContent} />
-          </Item>
-          <Item>
-            <ItemName>view</ItemName>
-            <ItemInput type="text" id="view" onChange={onChangeContent} />
-          </Item>
-        </Project>
-      )}
-
+      <Project>
+        <Item>
+          <ItemName>num</ItemName>
+          <ItemInput type="text" id="num" onChange={onChangeContent} />
+        </Item>
+        <Item>
+          <ItemName>startDate</ItemName>
+          <ItemInput type="text" id="startDate" onChange={onChangeContent} />
+        </Item>
+        <Item>
+          <ItemName>endDate</ItemName>
+          <ItemInput type="text" id="endDate" onChange={onChangeContent} />
+        </Item>
+        <Item>
+          <ItemName>title</ItemName>
+          <ItemInput type="text" id="title" onChange={onChangeContent} />
+        </Item>
+        <Item>
+          <ItemName>thumb</ItemName>
+          <ItemInput type="text" id="thumb" onChange={onChangeContent} />
+        </Item>
+        <Item>
+          <ItemName>cont_unit</ItemName>
+          <ItemInput type="text" id="unit" onChange={onChangeContent} />
+        </Item>
+        <Item>
+          <ItemName>cont_optimization</ItemName>
+          <ItemInput type="text" id="optimization" onChange={onChangeContent} />
+        </Item>
+        <Item>
+          <ItemName>cont_percent</ItemName>
+          <ItemInput type="text" id="percent" onChange={onChangeContent} />
+        </Item>
+        <Item>
+          <ItemName>view_code</ItemName>
+          <ItemInput type="text" id="percent" onChange={onChangeContent} />
+        </Item>
+        <Item>
+          <ItemName>view_page</ItemName>
+          <ItemInput type="text" id="page" onChange={onChangeContent} />
+        </Item>
+      </Project>
       <ProjectBtn onClick={onClickSubmit}>등록하기</ProjectBtn>
     </Wrapper>
   );
